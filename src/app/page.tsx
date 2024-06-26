@@ -1,7 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default async function Home() {
+  const rows = await fetch(process.env.POSTGRES_URL);
+  console.log(rows);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
